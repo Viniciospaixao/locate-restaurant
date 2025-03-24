@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build: .  # Usa o Dockerfile para construir a imagem
+    ports:
+      - "8080:8080"  # Mapeia a porta 8080 do host para o contêiner
+#    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:h2:file:/data/locate-restaurant-db  # Armazena dados em arquivo
+#      - SPRING_DATASOURCE_USERNAME=sa
+#      - SPRING_DATASOURCE_PASSWORD=password
+#      - SPRING_H2_CONSOLE_ENABLED=true  # Habilita o console do H2
+    volumes:
+      - ./data:/data  # Persiste os dados do H2 no diretório local "./data"
